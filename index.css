@@ -337,37 +337,24 @@ header{
     border: none;
 }
 .personal-account-container{
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2rem;
-    padding: 0px;
-    display: flex;
-}
-.personal-account-align{
-    position: relative;
-    padding: unset;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-bottom: 1rem;
     width: 100%;
+    margin: 2rem 0 1rem;
     overflow: hidden;
-    height: auto;
     border: 3px solid #c9c9cd;
-    border-radius: calc(2.5vh);
+    border-radius: 2.5vh;
 }
-.personal-account-image-container{
-    position: relative;
-    inset: 0;
+
+.personal-account-image {
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-.personal-account-image{
-    position: relative;
     height: 100%;
     object-fit: cover;
-    width: 100%;
-    inset: 0;
-    color: transparent;
+}
+
+.ads-container{
+    position: relative;
+    margin: 0px;
+    padding: ;
 }
