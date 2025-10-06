@@ -1,9 +1,5 @@
 *,::after, ::before{
     box-sizing: border-box;
-    margin: 0;
-    background: rgb(255,255,255);
-    height: 100%;
-    min-width: 375px;
 }
 
 @font-face {
@@ -30,10 +26,18 @@
     font-family: inter-text;
     src: url(assets/fonts/Inter-Regular.woff2);
 }
+@font-face {
+    font-family: inter-medium;
+    src: url(assets/fonts/Inter-Medium.woff2);
+}
 
-
-
-
+body{
+    margin: 0;
+    background: rgb(255,255,255);
+    height: 100%;
+    max-width: 375px;
+    font-family: revoult-medium;
+}
 
 
 
@@ -55,131 +59,229 @@
     position: relative;
     z-index: 0;
 }
-header{
-    background-color: rgb(255,255,255);
-    color: #191c1f;
-    box-sizing: content-box;
-    position: sticky;
-    height: 56px;
+.select-country-container{
+    position: relative;
+    z-index: 5;
+    margin: 0px;
+    padding: 0.75rem 0px;
+    background-color: #fff;
+    border-bottom: 1px solid #e2e2e7;
+}
+.select-country-align{
+    gap: 0.75rem;
+    margin: 0 auto;
+    max-width: 1000%;
+    padding: 0px 1.25rem;
+    display: grid;
+    grid-template:"close message message"
+        "dropdown dropdown button" / max-content 1fr 40px;
+        place-items: center start;
+}
+.select-country-text{
+    font-family: inter-text;
+    font-weight: 400;
+    letter-spacing: 0.01125rem;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    margin: 0;
+    padding: 0;
+    color: #505a63;
+    min-width: 0px;
+    grid-area: message;
+}
+.cross-image {
+  width: 24px;
+  height: 24px;
+  background-color: #505a63;
+  mask: url("assets/images/Cross.svg") no-repeat center / contain;
+}
+.country-select-box-container{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
     width: 100%;
-    top: 0px;
-    border-bottom: 1px solid #ebebf0;
+    grid-area: dropdown;
+}
+.select-country{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0px;
+    background-color: #ebebf0;
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+}
+.country-logo{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-width: 24px;
+    max-width: 100%;
+    width: 24px;
+    height: 24px;
+    border-radius: 9999px;
+    display: inline-block;
+}
+
+.country-name{
+    font-family: inter-text;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    letter-spacing: -0.00438rem;
+    margin: 0px;
+    padding: 0px;
+    flex: 1 1 0%;
+    color: #191c1f;
+    min-width: 0px;
+}
+.select-gap{
+    flex: 0 1 auto;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: 0px;
+}
+.drop-down-icon{
+    display: block;
+    flex: 0 0 auto;
+     width: 24px;
+    height: 24px;
+    background-color: #505a63;
+    mask: url("assets/images/ChevronDown.svg") no-repeat center / contain;
+}
+.header-send-icon{
+    grid-area: button;
+    cursor: pointer;
+    background-color: #191c1f;
+    border-radius: 9999px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.headerArrow-icon{
+    display: block;
+    flex: 0 0 auto;
+     width: 24px;
+    height: 24px;
+    background-color: #fff;
+    mask: url("assets/images/ArrowThinRight.svg") no-repeat center / contain;
+}
+
+header{
+    background-color: transparent;
+    color: #fff;
+    box-sizing: content-box;
+    border-bottom: initial #ebebf0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 56px;
+    z-index: 3;
+    transition: background-color 200ms, top 200ms, opacity 300ms;
+    margin: 0;
+    padding: 0;
 }
 .header-content-container{
     align-items: center;
     display: flex;
     height: 100%;
     justify-content: space-between;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0 auto;
     max-width: 1000px;
     width: 100%;
     padding: 0.75rem 1.25rem;
-    box-sizing: border-box;
-    margin: 0;
 }
-.revolute-header-logo{
-    display: flex;
+.header-logo{
     align-items: center;
-    height: 2rem;
-    padding: 0px;
-    margin: 0px;
-}
-.revolute-header-logo svg{
-    margin-top: -2px;
-    height: 1.5rem;
-    width: 108.75px;
-}
-
-.menu-button-container{
     margin: 0;
     padding: 0;
+    height: 2rem;
+    display: flex;
+}
+.header-logo svg{
+    margin-top: -2px;
+    height: 1.5rem;
 }
 .menu-button{
-    cursor: pointer;
-    display: block;
-    width: 1.5rem;
-    height: 1.5rem;
-    position: relative;
-    z-index: 0;
+        display: block;
+    flex: 0 0 auto;
+     width: 24px;
+    height: 24px;
+    background-color: #fff;
+    mask: url("assets/images/Menu.svg") no-repeat center / contain;
 }
 
 .main-wrapper{
     position: relative;
     max-height: 100vh;
+    padding: 0px;
+    margin: 0px;
     max-width: 100%;
 }
-.hero-container{
+.content-container{
     position: relative;
     top: -56px;
     z-index: 1;
-    box-sizing: border-box;
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: -56px;
+    margin: 0px 0px -56px 0px;
+    padding: 0;
 }
-.hero-content-container{
-    position:relative;
+.hero-banner-container{
+    position: relative;
     margin: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    padding-top: 56px;
-    overflow:hidden;
+    padding: 56px 0px 0px 0px;overflow: hidden;
     min-height: 100vh;
 }
-.hero-content-align{
-    top: 0;
-    left: 0;
-    right: 0;
+.hero-banner-image-container{
+    top: 0px;
+    left: 0px;
+    right: 0px;
     z-index: -1;
     overflow: hidden;
+    background: linear-gradient(rgb(76 138 204) 0%,rgb(57 145 216) 100%);
     position: absolute;
     margin: 0px;
     padding: 0px;
     height: 100%;
 }
-.hero-banner-image{
-    color: transparent;
-    transition-timing-function: cubic-bezier(0.35, 0, 0, 1);
-    transition: translate(-50%, 0px) scale(1.75);
+.banner-sky-image{
     position: absolute;
-    bottom: 0;
-    /* left: 50%; */
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, 0px) scale(1.75);
     width: 100%;
-    z-index: 0;
     height: 100%;
     transform-origin: 50% 100%;
     object-fit: cover;
     object-position: center bottom;
 }
 .banner-girl-image{
-    background: transparent;
-    position: absolute;
-    bottom: 0px;
-    z-index: 1;
-    left: 50%;
-    transform: translate(-50%, 0px);
-    transform-origin: 50% 100%;
-    pointer-events: none;
-    display: block;
-    width: 1761.98px;
-    height: 978.88px;
-    min-height: 370px;
-    min-width: 665px;
+   color: transparent;
+   position: absolute;
+   bottom: 0px;
+   left: 50%;
+   transform:  translate(-50%, 0px);
+   transform-origin: 50% 100%;
+   pointer-events: none;
+   display: block;
+   width: calc(201.6vh);
+   height: calc(112vh);
+   min-height: 370px;
+   min-width: 665px;
 }
 .banner-content-container{
-    top: 56px;
-    margin: 0 auto;
-    padding-bottom: 1.5rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    padding-top: 2rem;
+    margin: 0px auto;
+    padding: 2rem 1.25rem 1.5rem;
     width: 100%;
     max-width: 1000px;
 }
-.banner-text-container{
-    position: absolute;
+.banner-text-content{
+    position: relative;
     z-index: 1;
     flex-direction: column;
     gap: 1rem;
@@ -189,8 +291,8 @@ header{
     display: flex;
 }
 .banner-heading{
-    font-size: 36px;
     font-family: revoult-medium;
+    font-size: 2.25rem;
     font-weight: 500;
     line-height: 1;
     margin: 0;
@@ -198,11 +300,53 @@ header{
     color: #fff;
     min-width: 0px;
 }
-.banner-discription-container{
-    flex-direction: column;
-    gap: .25rem;
-    margin: 0px;
-    padding: 0px;
-    min-height: 0px;
+.banner-discription{
+    font-family: revoult-medium;
+    font-weight: 400;
+    gap: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    letter-spacing: normal;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-width: 0px;
+}
+.banner-download-button{
+    font-family: revoult-medium;
+    font-size: 1rem;
+    line-height: 1.375rem;
+    letter-spacing: normal;
+    height: auto;
+    width: min-content;
+    max-width: 240px;
+    font-weight: 500;
+    padding: 10px 1.5rem;
+    background: #191c1f;
+    color: #fff;
+    text-align: center;
+    overflow: ellipsis;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    max-width: 100%;
+    border-radius: 9999px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+.personal-account{
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0px 1rem;
+    border: 3px solid #c9c9cd;
+    border-radius: calc(2.5vh);
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    padding: 0px;
+    display: flex;
+    position: relative;
+
 }
