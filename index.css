@@ -714,7 +714,7 @@ body {
   border-radius: 20px;
 }
 
-.life-image {
+.engagement {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -1101,7 +1101,7 @@ body {
   display: none !important;
 }
 
-.display-in-desk {
+.display-in-desktop {
   display: none !important;
 }
 
@@ -1240,7 +1240,7 @@ body {
     height: initial;
   }
 
-  .height-218 {
+  .content-height-218 {
     height: 218px;
   }
 
@@ -1269,7 +1269,7 @@ body {
     margin-inline: auto;
   }
 
-  .height-232 {
+  .content-height-232 {
     height: 232px;
   }
 
@@ -1579,10 +1579,10 @@ body {
   }
   
   .explore-stocks-section {
-    height: 422.8px;
+    height: 390.8px;
   }
 
-  .height-90vh {
+  .view-port-height {
     min-height: 90vh;
   }
 
@@ -1707,12 +1707,12 @@ body {
     height: 433.399px;
   }
 
-  .height-419 {
+  .content-height-419 {
     height: 419.399px;
   }
 }
 
-/* desktop size  */
+/* desktoptop size  */
 
 
 @media screen and (min-width: 1920px) {
@@ -1842,11 +1842,11 @@ body {
     letter-spacing: 0.16px;
   }
 
-  .display-none-desk {
+  .display-none-desktop {
     display: none !important;
   }
 
-  .display-in-desk {
+  .display-in-desktop {
     display: block !important;
   }
 
@@ -1935,7 +1935,7 @@ body {
     height: 500px;
   }
 
-  .center-container-desk {
+  .center-container-desktop {
     grid-template-columns: 696px 600px;
     padding-block: 80px;
   }
@@ -1945,12 +1945,12 @@ body {
     grid-template-columns: 696px 600px;
   }
 
-  .coin-loop-container-desk {
+  .coin-loop-container-desktop {
     height: 860px !important;
     max-height: 860px !important;
   }
 
-  .height-540 {
+  .content-content-height-540 {
     height: 540px;
     width: 1080px;
   }
@@ -1981,12 +1981,12 @@ body {
     gap: 32px;
   }
 
-  .carousel-img-container-desk {
+  .carousel-img-container-desktop {
     width: 320.88px;
     height: 452.8px;
   }
 
-  .carousel-img-desk {
+  .carousel-img-desktop {
     width: calc(126vh) !important;
     height: calc(70vh) !important;
   }
