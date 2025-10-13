@@ -1,67 +1,917 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Revolute</title>
-</head>
-<body>
-    <div class="wrapper">
-        <div class="select-country-container">
-            <div class="select-country-align">
-                <p class="select-country-text">You’re on the United Kingdom website. Choose your country or region to see  location-specific content</p>
-                <span class="cross-image"></span>
-                    <div class="country-select-box-container">
-                        <!-- <select id="country" name="select_country">
-                            <option value="Ind">India</option>
-                            <option value="Uk">United Kingdom</option>
-                            <option value="any">Choose another country</option>
-                        </select> -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>
+      Revolut
+    </title>
+  </head>
+  <body>
 
-                        <span class="select-country">
-                            <img class="country-logo" src="assets/images/IN.webp" alt="country image on the header">
-                            <span class="country-name">India</span>
-                            <div class="select-gap"></div>
-                            <span class="drop-down-icon"></span>
-                        </span>
-                    </div>
-                <div class="header-send-icon">
-                    <span class="headerArrow-icon"></span>
-                </div>
-            </div> 
-        </div>
-        <header>
-            <div class="header-content-container">
-                <span class="header-logo">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--rui-color-white)" viewBox="0 0 145 32" xmlns="http://www.w3.org/2000/svg" class="sc-81786132-0 bmMKuq"><path clip-rule="evenodd" d="m98.8039 0h5.6871v31.7312h-5.6871zm46.0571 13.3685v-4.92408h-5.881v-6.41996h-5.687v23.40534c0 2.1506.541 3.7895 1.608 4.8714 1.066 1.0828 2.728 1.6317 4.939 1.6317h5.021v-4.924h-3.674c-.799 0-1.372-.1757-1.704-.5226-.305-.3175-.503-1.1195-.503-2.043v-11.0748zm-84.6893 12.1865 5.8804-17.11125h5.9749l-8.4889 23.28775h-6.7327l-8.489-23.28775h5.9749zm63.8513-5.4451c0 1.4743-.224 2.7569-.664 3.8121-.437 1.0495-1.063 1.8541-1.861 2.3908s-1.779.8089-2.916.8089c-1.626 0-2.853-.5344-3.646-1.5878-.802-1.0646-1.209-2.6781-1.209-4.7954v-12.29412h-5.687v12.92272c0 2.0122.251 3.7189.748 5.0721.497 1.3573 1.18 2.4614 2.029 3.281.849.8187 1.84 1.41 2.946 1.7581 1.1.3463 2.284.5217 3.518.5217 1.778 0 3.25-.3225 4.373-.9586 1.024-.5819 1.883-1.2622 2.555-2.0251l.509 2.7148h4.992v-23.28672h-5.687zm-33.913-10.43745c-1.7923-.99372-3.9206-1.49716-6.3249-1.49716-2.3749 0-4.4953.50344-6.3024 1.49684-1.8092.99597-3.2308 2.40247-4.2254 4.18037-.9931 1.7763-1.4966 3.8817-1.4966 6.2574 0 2.3466.5035 4.4373 1.4966 6.2136.994 1.7773 2.4159 3.1835 4.2254 4.1793 1.8071.9935 3.9276 1.4969 6.3024 1.4969 2.4042 0 4.5325-.5034 6.3249-1.4972 1.7942-.9953 3.2082-2.4014 4.2026-4.179.9934-1.7773 1.4971-3.868 1.4971-6.2136 0-2.3748-.5037-4.4802-1.4971-6.2575-.995-1.7781-2.4087-3.1847-4.2026-4.17995zm-3.0047 16.63905c-.9162.5966-2.0332.8993-3.3199.8993-1.2572 0-2.367-.3026-3.2986-.8995-.9332-.5976-1.665-1.441-2.1757-2.5072-.5128-1.0672-.7732-2.3099-.7732-3.6942 0-1.4128.2601-2.6627.7732-3.7154.5104-1.0518 1.2428-1.8955 2.1769-2.5081.9313-.612 2.0408-.9222 3.2973-.9222 1.2861 0 2.4025.3102 3.319.9215.9191.613 1.6443 1.457 2.1559 2.5091.5125 1.0552.7725 2.3052.7725 3.7152 0 1.3811-.26 2.6242-.7725 3.6941-.5115 1.0664-1.2364 1.9099-2.1549 2.5074zm-81.19475-18.48035h-5.91055v23.90035h5.91055zm18.53525 1.36671c0-5.07148-4.1298-9.19751668-9.2063-9.19751668h-15.2395v5.10407668h14.5149c2.2974 0 4.2004 1.80488 4.2425 4.02316.021 1.11072-.3959 2.15902-1.1738 2.95172-.7782.7929-1.818 1.2299-2.9278 1.2299h-5.65434c-.20074 0-.36413.1631-.36413.3639v4.5363c0 .0772.02383.1509.06866.213l9.59341 13.3092h7.0225l-9.6157-13.3456c4.8425-.2431 8.7396-4.3118 8.7396-9.18814zm18.1745.33907c-1.7026-.90368-3.7242-1.36164-6.0087-1.36164-2.2874 0-4.3325.50376-6.0787 1.4978-1.7491.99501-3.1251 2.40181-4.0897 4.18061-.9636 1.7748-1.452 3.8949-1.452 6.3017 0 2.3457.4959 4.4357 1.4746 6.2123.9808 1.7807 2.3955 3.1797 4.2041 4.158 1.8052.9784 3.9706 1.4743 6.4354 1.4743 1.9554 0 3.7114-.3663 5.2192-1.0894 1.5081-.7249 2.7393-1.712 3.6596-2.9341.8742-1.1615 1.464-2.4752 1.7525-3.9042l.0311-.1525h-5.6559l-.0267.0916c-.3114 1.0659-.9156 1.9081-1.7964 2.5038-.9454.6405-2.1066.9654-3.4519.9654-1.1402 0-2.17-.2443-3.0605-.7261-.8862-.479-1.5791-1.164-2.059-2.0367-.4818-.8757-.756-1.9294-.8146-3.1254v-.187h17.0842l.0191-.1044c.0596-.3278.0979-.6656.1145-1.0053.0141-.331.0223-.6616.0223-.9953-.0305-2.2563-.5348-4.2409-1.4987-5.8993-.9677-1.6603-2.3215-2.9605-4.0238-3.86417zm-2.0724 4.38547c.9717.8178 1.5762 1.9799 1.7979 3.4564h-11.2467c.1285-.958.4466-1.7877.9463-2.4683.5242-.7139 1.1957-1.2748 1.9962-1.6672.8014-.3936 1.6813-.5934 2.6148-.5934 1.5781-.0001 2.8874.4281 3.8915 1.2725z" fill-rule="evenodd" fill="#FFFFFF"></path></svg>
-                </span>
-                <span class="menu-button"></span>
-            </div>
-        </header>
-        <main class="main-wrapper">
-            <section class="content-container">
-                <div class="hero-banner-container">
-                    <div class="hero-banner-image-container">
-                        <img class="banner-sky-image" src="assets/images/banner-background.png" alt="background image of a sky in the banner page">
-                        <img class="banner-girl-image" src="assets/images/banner-girl-image.png" alt="background image of a female model on the banner page">
-                    </div>
-                    <section class="banner-content-container">
-                        <div class="banner-text-content">
-                            <h1 class="banner-heading">Change the way you money</h1>
-                            <p class="banner-discription">Home or away, local or global — move freely between countries and currencies. Sign up for free, in a tap.</p>
-                            <button class="banner-download-button">Download the app</button>
-                        </div>
-                        <div class="personal-account-container">
-                            <img class="personal-account-image" src="assets/images/personal-account.png" alt="personal account image on the hero banner">
-                        </div>
-                    </section>
-                </div>
-                <section class="ads-container">
+    <!-- Select your country -->
 
-                </section>
-            </section>
-        </main>
+    <div class="country-container">
+      <p class="country-text">
+        You’re on the United Kingdom website. Choose your country or region to
+        see location-specific content
+      </p>
+      <button class="close-button">
+        <span
+          class="close-button-image" title="close-button">
+        </span>
+      </button>
+      <button class="country-dropdown">
+        <img
+          src="https://assets.revolut.com/assets/flags/IN.webp"
+          alt="header-country-flag-image"
+          width="24"
+          height="24"
+        />
+        <span class="india-text">India</span>
+        <span class="down-arrow" title="drop-down">
+        </span>
+      </button>
+
+      <button class="send-button">
+        <img
+          src="https://assets.revolut.com/assets/icons/ArrowThinRight.svg"
+          alt="send-button-image"
+          class="send-button-image"
+        />
+      </button>
     </div>
-</body>
+    <!-- header section  -->
+    <header class="header-section">
+      <a href="#" class="revolut-title">
+        <svg
+          class="revolut-title-image"
+          viewBox="0 0 145 32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="m98.8039 0h5.6871v31.7312h-5.6871zm46.0571 13.3685v-4.92408h-5.881v-6.41996h-5.687v23.40534c0 2.1506.541 3.7895 1.608 4.8714 1.066 1.0828 2.728 1.6317 4.939 1.6317h5.021v-4.924h-3.674c-.799 0-1.372-.1757-1.704-.5226-.305-.3175-.503-1.1195-.503-2.043v-11.0748zm-84.6893 12.1865 5.8804-17.11125h5.9749l-8.4889 23.28775h-6.7327l-8.489-23.28775h5.9749zm63.8513-5.4451c0 1.4743-.224 2.7569-.664 3.8121-.437 1.0495-1.063 1.8541-1.861 2.3908s-1.779.8089-2.916.8089c-1.626 0-2.853-.5344-3.646-1.5878-.802-1.0646-1.209-2.6781-1.209-4.7954v-12.29412h-5.687v12.92272c0 2.0122.251 3.7189.748 5.0721.497 1.3573 1.18 2.4614 2.029 3.281.849.8187 1.84 1.41 2.946 1.7581 1.1.3463 2.284.5217 3.518.5217 1.778 0 3.25-.3225 4.373-.9586 1.024-.5819 1.883-1.2622 2.555-2.0251l.509 2.7148h4.992v-23.28672h-5.687zm-33.913-10.43745c-1.7923-.99372-3.9206-1.49716-6.3249-1.49716-2.3749 0-4.4953.50344-6.3024 1.49684-1.8092.99597-3.2308 2.40247-4.2254 4.18037-.9931 1.7763-1.4966 3.8817-1.4966 6.2574 0 2.3466.5035 4.4373 1.4966 6.2136.994 1.7773 2.4159 3.1835 4.2254 4.1793 1.8071.9935 3.9276 1.4969 6.3024 1.4969 2.4042 0 4.5325-.5034 6.3249-1.4972 1.7942-.9953 3.2082-2.4014 4.2026-4.179.9934-1.7773 1.4971-3.868 1.4971-6.2136 0-2.3748-.5037-4.4802-1.4971-6.2575-.995-1.7781-2.4087-3.1847-4.2026-4.17995zm-3.0047 16.63905c-.9162.5966-2.0332.8993-3.3199.8993-1.2572 0-2.367-.3026-3.2986-.8995-.9332-.5976-1.665-1.441-2.1757-2.5072-.5128-1.0672-.7732-2.3099-.7732-3.6942 0-1.4128.2601-2.6627.7732-3.7154.5104-1.0518 1.2428-1.8955 2.1769-2.5081.9313-.612 2.0408-.9222 3.2973-.9222 1.2861 0 2.4025.3102 3.319.9215.9191.613 1.6443 1.457 2.1559 2.5091.5125 1.0552.7725 2.3052.7725 3.7152 0 1.3811-.26 2.6242-.7725 3.6941-.5115 1.0664-1.2364 1.9099-2.1549 2.5074zm-81.19475-18.48035h-5.91055v23.90035h5.91055zm18.53525 1.36671c0-5.07148-4.1298-9.19751668-9.2063-9.19751668h-15.2395v5.10407668h14.5149c2.2974 0 4.2004 1.80488 4.2425 4.02316.021 1.11072-.3959 2.15902-1.1738 2.95172-.7782.7929-1.818 1.2299-2.9278 1.2299h-5.65434c-.20074 0-.36413.1631-.36413.3639v4.5363c0 .0772.02383.1509.06866.213l9.59341 13.3092h7.0225l-9.6157-13.3456c4.8425-.2431 8.7396-4.3118 8.7396-9.18814zm18.1745.33907c-1.7026-.90368-3.7242-1.36164-6.0087-1.36164-2.2874 0-4.3325.50376-6.0787 1.4978-1.7491.99501-3.1251 2.40181-4.0897 4.18061-.9636 1.7748-1.452 3.8949-1.452 6.3017 0 2.3457.4959 4.4357 1.4746 6.2123.9808 1.7807 2.3955 3.1797 4.2041 4.158 1.8052.9784 3.9706 1.4743 6.4354 1.4743 1.9554 0 3.7114-.3663 5.2192-1.0894 1.5081-.7249 2.7393-1.712 3.6596-2.9341.8742-1.1615 1.464-2.4752 1.7525-3.9042l.0311-.1525h-5.6559l-.0267.0916c-.3114 1.0659-.9156 1.9081-1.7964 2.5038-.9454.6405-2.1066.9654-3.4519.9654-1.1402 0-2.17-.2443-3.0605-.7261-.8862-.479-1.5791-1.164-2.059-2.0367-.4818-.8757-.756-1.9294-.8146-3.1254v-.187h17.0842l.0191-.1044c.0596-.3278.0979-.6656.1145-1.0053.0141-.331.0223-.6616.0223-.9953-.0305-2.2563-.5348-4.2409-1.4987-5.8993-.9677-1.6603-2.3215-2.9605-4.0238-3.86417zm-2.0724 4.38547c.9717.8178 1.5762 1.9799 1.7979 3.4564h-11.2467c.1285-.958.4466-1.7877.9463-2.4683.5242-.7139 1.1957-1.2748 1.9962-1.6672.8014-.3936 1.6813-.5934 2.6148-.5934 1.5781-.0001 2.8874.4281 3.8915 1.2725z"
+            fill-rule="evenodd"
+          ></path>
+        </svg>
+      </a>
+      <nav class="nav-section">
+        <div class="nav-menu-container">
+          <a href="#" class="nav-menu">Personal</a>
+          <a href="#" class="nav-menu">Business</a>
+          <a href="#" class="nav-menu">Kids & Teens</a>
+          <a href="#" class="nav-menu">Company</a>
+        </div>
+        <div class="auth-buttons">
+          <button class="login-button auth-buttons-common">Log in</button>
+          <button class="signup-button auth-buttons-common">Sign up</button>
+        </div>
+      </nav>
+      <button class="menu-button">
+        <img
+          class="hamburger-icon"
+          src="https://assets.revolut.com/assets/icons/Menu.svg"
+          alt="menu-icon"
+        />
+      </button>
+    </header>
+    <!-- hero section  -->
+    <main class="hero-section">
+      <picture>
+        <source
+          srcset="
+            https://assets.revolut.com/published-assets-v3/4bcf4f81-c0b1-4bde-82f5-0b4cd2ddd2ef/2f242895-e89a-44d3-9f8a-fb78b32d80c5.png 1080w,
+            https://assets.revolut.com/published-assets-v3/4bcf4f81-c0b1-4bde-82f5-0b4cd2ddd2ef/f94bbcee-b4a0-49f2-8043-c472b47d0ac7.png 2048w,
+            https://assets.revolut.com/published-assets-v3/4bcf4f81-c0b1-4bde-82f5-0b4cd2ddd2ef/61f4df02-d372-4ced-86ef-cb50176593a7.png 3840w
+          "
+          type="image/webp"
+        />
+        <img
+          class="hero-background-image"
+          src="https://assets.revolut.com/published-assets-v3/c396d86b-9059-4343-9289-fb1490dc281d/07149e7f-0850-47db-bd67-5a93e1cfa8e6.png"
+          alt="hero-page-sky-image"
+        />
+      </picture>
+      <picture>
+        <source
+          srcset="
+            https://assets.revolut.com/published-assets-v3/c1d9d317-7303-4f79-8756-937632237bb5/2442a1d3-8d03-44b9-a046-db33242f100a.png 1080w,
+            https://assets.revolut.com/published-assets-v3/c1d9d317-7303-4f79-8756-937632237bb5/0eb1515a-91e8-4d4e-8e19-ff7c82de5410.png 2048w,
+            https://assets.revolut.com/published-assets-v3/c1d9d317-7303-4f79-8756-937632237bb5/344c3cc7-0d4d-4749-8f12-b677d289a4a5.png 3840w
+          "
+          type="image/webp"
+        />
+        <img
+          class="hero-image"
+          src="https://assets.revolut.com/published-assets-v3/988d267e-b628-453c-bdfe-0c5beeb1d233/58acb31c-cd5d-41bc-a8df-4b49f4f09e58.png"
+          alt="hero-page-woman-image"
+        />
+      </picture>
+      <section class="hero-content-container">
+        <h1 class="hero-title">Change the way you money</h1>
+        <p class="hero-description">
+          Home or away, local or global — move freely between countries and
+          currencies. Sign up for free, in a tap.
+        </p>
+        <button class="hero-button">Download the app</button>
+        <div class="hero-card-mobile display-none-align">
+          <picture>
+            <source
+              srcset="
+                https://assets.revolut.com/published-assets-v3/bf61de3c-c08f-454e-bce7-0d7bfe8020d0/2d74e03b-e5f6-40f5-b963-17d5e8316dcb.png 1080w,
+                https://assets.revolut.com/published-assets-v3/bf61de3c-c08f-454e-bce7-0d7bfe8020d0/21ee6e26-28e0-4abf-8413-2d87a950d844.png 2048w,
+                https://assets.revolut.com/published-assets-v3/bf61de3c-c08f-454e-bce7-0d7bfe8020d0/4d2a0891-36e8-4a68-992f-b50e72fcd10e.png 3840w
+              "
+              type="image/webp"
+            />
+            <img
+              class="hero-card-image"
+              src="https://assets.revolut.com/published-assets-v3/cab77911-bd2f-41a9-9dc8-6fb8783d99de/70c7e348-3d6b-4df3-95e0-c9d846eabf24.png"
+              alt="hero-cards-image"
+            />
+          </picture>
+          <div class="hero-card-overlay"></div>
+        </div>
+      </section>
+      <div class="personal-account-align">
+        <div class="hero-card-align">
+          <div class="hero-card-overlay"></div>
+          <div class="carousel-img-container hero-card-align-container">
+            <img
+              class="hero-background-image viewport-size"
+              src="https://assets.revolut.com/published-assets-v3/c396d86b-9059-4343-9289-fb1490dc281d/07149e7f-0850-47db-bd67-5a93e1cfa8e6.png"
+              alt="sky-image"
+            />
+            <img
+              class="background-image-women"
+              src="https://assets.revolut.com/published-assets-v3/988d267e-b628-453c-bdfe-0c5beeb1d233/58acb31c-cd5d-41bc-a8df-4b49f4f09e58.png"
+              alt="women-image"
+            />
+            <img
+              class="personal-account-image"
+              src="https://assets.revolut.com/published-assets-v3/cab77911-bd2f-41a9-9dc8-6fb8783d99de/70c7e348-3d6b-4df3-95e0-c9d846eabf24.png"
+              alt="salary-card-image"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+  <div class="personal-account-bottom-align">
+    <div class="personal-account-container">
+    <section class="carousel-card-section">
+      <div class="card-content">
+        <h2 class="card-heading">Your salary, reimagined</h2>
+        <p class="personal-account-description">
+          Spend smartly, send quickly, sort your salary automatically, and watch
+          your savings grow — all with Revolut.
+        </p>
+        <button class="hero-button margin-auto margin-top-16">Move your salary</button>
+      </div>
+      <div class="personal-account-align">
+        <div class="house-bill-container display-none-mobile">
+          <img
+            class="bill-background-image"
+            src="https://assets.revolut.com/published-assets-v3/0820aba0-8390-41fe-a37f-4b7060373ca7/3e343861-8410-48fc-a6fa-224b4f5e002a.png"
+            alt="background-image"
+          />
+        </div>
+        <div class="carousel-img-container carousel-img-container-desk">
+          <img
+            class="hero-background-image viewport-size"
+            src="https://assets.revolut.com/published-assets-v3/c396d86b-9059-4343-9289-fb1490dc281d/07149e7f-0850-47db-bd67-5a93e1cfa8e6.png"
+            alt="sky-image"
+          />
+          <img
+            class="background-image-primary carousel-img-desk"
+            src="https://assets.revolut.com/published-assets-v3/988d267e-b628-453c-bdfe-0c5beeb1d233/58acb31c-cd5d-41bc-a8df-4b49f4f09e58.png"
+            alt="hero-image"
+          />
+          <img
+            class="personal-account-image"
+            src="https://assets.revolut.com/published-assets-v3/cab77911-bd2f-41a9-9dc8-6fb8783d99de/70c7e348-3d6b-4df3-95e0-c9d846eabf24.png"
+            alt="salary-account"
+          />
+        </div>
+        <div class="house-bill-container">
+          <img
+            class="bill-background-image"
+            src="https://assets.revolut.com/published-assets-v3/cdc88cb3-01bf-4b8b-98d8-3cb9225f13fd/746adefb-c3f7-4688-b767-c5d7cc21b2a7.png"
+            alt="background-image"
+          />
+        </div>
+      </div>
+      <ul class="carousel-pointers display-none-md">
+        <li class="carousel-dot-active"></li>
+        <li class="carousel-dot"></li>
+        <li class="carousel-dot"></li>
+      </ul>
+    </section>
+    </div>
+  </div>
+    <section class="popularity-container">
+      <h2 class="popularity-title">
+        Join 65+ million customers worldwide and 12 million in the UK
+      </h2>
+      <ul class="platform-container">
+        <li class="available-platform">
+          <img
+            class="platform-image object-cover"
+            src="https://assets.revolut.com/published-assets-v3/baf74063-c481-431d-85a0-9e5743572f28/91d20a70-1a2d-46e1-8f45-ebd7e83196a8.png"
+            alt="playstore and apple store"
+          />
+          <span class="platform-text">#3 most downloaded finance app</span>
+        </li>
+        <li class="available-platform">
+          <img
+            class="platform-image object-cover"
+            src="https://assets.revolut.com/published-assets-v3/6ca566dc-8294-4e99-afbd-c51804cc5af4/2fb9c781-10a1-4bbf-bb42-7526bcc81286.png"
+            alt="playstore and apple store"
+          />
+          <span class="platform-text">4.6 out of 5 on Trustpilot</span>
+        </li>
+        <li class="available-platform">
+          <img
+            class="platform-image"
+            src="https://assets.revolut.com/published-assets-v3/c5c49070-312c-4567-8359-6ffc1624cafa/931fbf11-937a-45d4-9c9d-7078412a8ba9.png"
+            alt="playstore and apple store"
+          />
+          <span class="platform-text"
+            >Best International Payments Provider 2025</span
+          >
+        </li>
+        <li class="available-platform">
+          <img
+            class="platform-image"
+            src="https://assets.revolut.com/published-assets-v3/65e5f825-aa83-424e-9a3a-ad421e6cada3/059ee08c-19cd-4861-899f-e9a493a5bcd5.png"
+            alt="playstore and apple store"
+          />
+          <span class="platform-text"
+            >Best Consumer Banking Mobile App 2025</span
+          >
+        </li>
+      </ul>
+    </section>
+    <section class="customer-satisfaction">
+      <div class="available-platform awards-card">
+        <img
+          class="platform-image awards-card-image"
+          src="https://assets.revolut.com/published-assets-v3/dfa154ba-a21c-4dc1-b9a3-4ce83ccdb1ca/3829d1d5-8883-4351-a6a8-a960d419f04e.png"
+          alt="playstore and apple store"
+        />
+        <span class="platform-text">Customer Satisfaction — Gold</span>
+      </div>
+      <div class="available-platform awards-card">
+        <img
+          class="platform-image awards-card-image"
+          src="https://assets.revolut.com/published-assets-v3/f9f2192a-0076-4545-8e1e-83d852ea5130/264c79dd-e283-4f7d-9e60-a11079c7fc02.png"
+          alt="playstore and apple store"
+        />
+        <span class="platform-text">Consumer Guardian Badge 2025</span>
+      </div>
+    </section>
+
+    <!-- elevate your spending -->
+
+    <section class="center-container">
+      <div class="video-container">
+        <video autoplay muted loop class="video">
+          <source
+            src="https://assets.revolut.com/published-assets-v3/076a0584-94c8-4d46-bec1-4402b2c5dcaf/70148cfd-9008-45aa-bb88-b048b8d02067.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+      <div class="video-overlay-container">
+        <div class="content-section">
+          <h2 class="content-heading">Elevate your spend</h2>
+          <span class="meet-savings-discription">
+            <span class="content-description margin-block-0"
+              >Earn points on your purchases with one of our debit cards. Then
+              redeem them for Airline Miles and more. RevPoints T&Cs apply.</span
+            >
+            <span class="content-terms margin-top-8"
+              >Some cards available on paid subscriptions only. Fees may apply.</span
+            >
+          </span>
+          <button class="content-button margin-top-40">Start earning</button>
+        </div>
+        <div class="explore-stocks-section"></div>
+        <div class="card-buttons margin-inline-center">
+          <button class="physical-card">Physical cards</button>
+          <button class="virtual-card">Virtual cards</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Life Meets Savings -->
+
+    <section class="center-container">
+      <div class="video-container">
+        <picture>
+          <source
+            srcset="
+              https://assets.revolut.com/published-assets-v3/0b709a3f-3f22-48ba-9af7-70552fb3cb10/949abf57-54b0-4e7c-9cd9-4e6f5076cab0.png 1080w,
+              https://assets.revolut.com/published-assets-v3/0b709a3f-3f22-48ba-9af7-70552fb3cb10/4d3ae3d1-b443-4483-beb7-20071261f5ab.png 2048w,
+              https://assets.revolut.com/published-assets-v3/0b709a3f-3f22-48ba-9af7-70552fb3cb10/cde96607-75d5-4a58-b785-991480da4c2f.png 3840w
+            "
+          />
+          <img
+            class="life-image"
+            src="https://assets.revolut.com/published-assets-v3/e24144ad-706f-400b-8a61-104b9f5d22af/943706a9-37cc-4016-8650-a497179dc1d1.png"
+            alt="marriage image"
+          />
+        </picture>
+      </div>
+      <div class="video-overlay-container">
+        <div class="content-section">
+          <h2 class="content-heading">Life, meet savings</h2>
+          <span class="meet-savings-discription">
+            <span class="content-description margin-block-0"
+              >Grow your money with up to 4.5% AER/Gross (variable) interest rate
+              on Savings, paid every day.</span
+            >
+            <span class="content-terms margin-top-8"
+              >AER stands for Annual Equivalent Rate and illustrates what the
+              interest rate would be if interest was paid and compounded once each
+              year. Gross is the interest rate without tax deducted. The interest
+              rate is variable and subject to your selected subscription. T&Cs
+              apply.</span
+            >
+          </span>
+          <button class="content-button margin-top-40">Explore Savings</button>
+        </div>
+        <div class="explore-stocks-section height-218 height-419 height-540">
+          <img
+            class="life-image object-contain"
+            src="https://assets.revolut.com/published-assets-v3/66f957b0-fc26-429b-8bc8-0f6ec7a86ad4/7b429db7-595f-4785-be83-754558447088.png"
+            alt="saving-account-image"
+          />
+        </div>
+        <div class="savings-card-buttons">
+          <button class="virtual-card">Adventure</button>
+          <button class="physical-card">Wedding</button>
+          <button class="virtual-card">Moving</button>
+        </div>
+      </div>
+    </section>
+    <!-- your-money-safe space -->
+    <section class="center-container background-white height-90vh">
+      <div class="video-overlay-container money-safe-align">
+        <div
+          class="content-section text-black content-section-align margin-bottom-0"
+        >
+          <h2 class="content-heading">Your money’s safe space</h2>
+          <span class="content-description margin-block-18 width-full"
+            >With Revolut Secure, you’re entering a new era of money security —
+            where our proactive, purpose-built defences and team of fraud
+            specialists help protect every account, 24/7.</span
+          >
+          <button class="hero-button margin-4 margin-top-32 margin-top-40">
+            Learn more
+          </button>
+        </div>
+        <div
+          class="explore-stocks-video max-height-600 coin-loop-container-desk"
+        >
+          <video
+            class="coin-loop object-contain coin-loop-align"
+            autoplay
+            loop
+            muted
+          >
+            <source
+              src="https://assets.revolut.com/published-assets-v3/7bf7c951-27c0-4ceb-9021-881e85ca6b25/332f5fdd-c0b9-44be-8dea-fc17b3d6ccdf.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore stocks -->
+
+    <section class="center-container">
+      <div class="video-overlay-container">
+        <div class="content-section stock-height">
+          <h2 class="content-heading">Explore 2,500+ stocks</h2>
+          <span class="content-description margin-0"
+            >From Apple to Zoom, invest in some of the biggest and most
+            influential companies in the world, commission-free within your
+            monthly allowance.¹ <br /><br />Other fees may apply. Capital at
+            risk.</span
+          >
+          <button class="content-button">Try it out</button>
+        </div>
+        <div class="explore-stocks-video height-388 height-232">
+          <video
+            class="coin-loop aspect-ratio margin-inline-center display-none-md"
+            autoplay
+            muted
+            loop
+          >
+            <source
+              src="https://assets.revolut.com/published-assets-v3/b0ae2a5b-0009-4c4a-8978-495c25af712d/84377109-7c2b-41fe-b6ee-fc36817355b7.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <video class="coin-loop display-none-mobile" autoplay muted loop>
+            <source
+              src="https://assets.revolut.com/published-assets-v3/a07a910c-0df4-45f5-b0ca-7864377877a3/0da52da5-f59c-4863-a918-d8861c032000.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="card-buttons margin-inline-center">
+          <button class="physical-card">Stocks</button>
+          <button class="virtual-card">Commodities</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join 60+ million  -->
+
+    <section class="app-download-section">
+      <h2 class="download-text">Join the 60+ million using Revolut</h2>
+      <button class="hero-button margin-top-8">Download the app</button>
+    </section>
+
+    <!-- Policy-section  -->
+
+    <section class="policy-section">
+      <p class="policy-text">¹FOR STOCK TRADING: Capital at risk.</p>
+      <p class="policy-text">
+        Revolut Trading Ltd provides a non-advised execution-only service in
+        shares. Revolut Trading Ltd does not provide investment advice or
+        personal recommendations. You, as an individual investor, must make your
+        own decisions, seeking independent professional advice if you are unsure
+        as to the suitability or appropriateness of any investment for your
+        individual circumstances or needs.
+      </p>
+      <p class="policy-text">
+        The value of investments can go up as well as down and you may receive
+        less than your original investment or lose the value of your entire
+        initial investment. Past performance and forecasts are not reliable
+        indicators of future results. Currency rate fluctuations can adversely
+        impact the overall returns on your original investment. Any trades
+        outside of your monthly allowance are charged at 0.25% of the order
+        amount if you are a Standard, Plus, Premium, or Metal customer, or at
+        0.12% of the order amount if you are an Ultra/Trading Pro customer.
+        <a class="policy-link" href="#">Read more on these fees</a>. Further
+        information about the investment service provided by Revolut Trading Ltd
+        can be found in the
+        <a class="policy-link" href="#">Terms of Business</a>,
+        <a href="#" class="policy-link">Risk Disclosure</a>, and
+        <a href="#" class="policy-link">Invest FAQs</a>.
+      </p>
+      <p class="policy-text">
+        Revolut Trading Ltd (No. 11567840) is a firm authorised and regulated by
+        the Financial Conduct Authority (FRN: 933846). The registered address of
+        Revolut Trading Ltd is at 7 Westferry Circus, Canary Wharf, London,
+        England, E14 4HD.
+      </p>
+      <p class="policy-text">
+        ²FOR COMMODITIES: Capital at risk. <br />Revolut Ltd commodities service
+        is not regulated by the FCA and it is not protected or covered by the
+        Financial Ombudsman Service, or the Financial Services Compensation
+        Scheme.
+      </p>
+      <p class="policy-text">
+        Revolut Ltd (No. 08804411) is also authorised by the FCA under the
+        Electronic Money Regulations 2011 (Firm Reference 900562). Insurance
+        related-products are arranged by Revolut Travel Ltd which is authorised
+        by the FCA to undertake insurance distribution activities (FCA No:
+        780586) and by Revolut Ltd, an Appointed Representative of Revolut
+        Travel Ltd in relation to insurance distribution activities.
+      </p>
+      <p class="policy-text">
+        If you would like to find out more about which Revolut entity you
+        receive services from, or if you have any other questions, please reach
+        out to us via the in-app chat in the Revolut app.
+      </p>
+    </section>
+
+    <!-- Footer-section  -->
+
+    <footer class="footer-section">
+      <h2 class="footer-heading">Choose your subscription</h2>
+
+      <!-- Subscription section  -->
+      <div class="subscription-list-container">
+        <ul class="subscription-section">
+          <li class="subscription-card">
+            <span class="subscription-list">
+              <h2 class="subscription-card-heading">Standard</h2>
+              <h3 class="subscription-price-text">Free</h3>
+              <p class="subscription-description">
+                For the financial basics — everything you need for better money
+                management in one place. Sending money abroad or sticking to a
+                budget has never been easier.
+              </p>
+            </span>
+            <div class="arrow-right">
+              <span class="arrow-right-image"></span>
+            </div>
+          </li>
+          <li class="subscription-card">
+            <span class="subscription-list">
+              <h2 class="subscription-card-heading">Plus</h2>
+              <h3 class="subscription-price-text">£3.99/month</h3>
+              <p class="subscription-description">
+                For the smart spender — access additional benefits like better
+                limits for spending abroad and insurance for your purchases, on
+                our affordable paid subscription.
+              </p>
+            </span>
+            <div class="arrow-right">
+              <span class="arrow-right-image"></span>
+            </div>
+          </li>
+          <li class="subscription-card">
+            <span class="subscription-list">
+              <h2 class="subscription-card-heading">Premium</h2>
+              <h3 class="subscription-price-text">£7.99/month</h3>
+              <p class="subscription-description">
+                For elevating every day — access exclusive subscriptions, better
+                savings rates, and exchange unlimited amounts of money.
+              </p>
+            </span>
+            <div class="arrow-right">
+              <span class="arrow-right-image"></span>
+            </div>
+          </li>
+          <li class="subscription-card">
+            <span class="subscription-list">
+              <h2 class="subscription-card-heading">Metal</h2>
+              <h3 class="subscription-price-text">£14.99/month</h3>
+              <p class="subscription-description">
+                For the global travellers and traders — relax with travel
+                insurance, enjoy enhanced limits, and subscriptions worth £2,100
+                annually.
+              </p>
+            </span>
+            <div class="arrow-right">
+              <span class="arrow-right-image"></span>
+            </div>
+          </li>
+          <li class="subscription-card">
+            <span class="subscription-list">
+              <h2 class="subscription-card-heading">Ultra</h2>
+              <h3 class="subscription-price-text">£55/month (introductory offer)</h3>
+              <p class="subscription-description">
+                For those seeking the best of Revolut — get exceptional benefits
+                like unlimited airport lounge access, monthly global data,
+                partner subscriptions, and cancellation cover.
+              </p>
+            </span>
+            <div class="arrow-right">
+              <span class="arrow-right-image"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- footer-nav-bar  -->
+
+      <section class="footer-nav">
+        <div class="footer-list-container display-in-desk">
+          <div class="footer-nav-list">
+            <h2 class="footer-nav-heading">Crypto</h2>
+            <a href="#" class="footer-nav-link">Crypto</a>
+            <a href="#" class="footer-nav-link">Revolut Ramp</a>
+            <a href="#" class="footer-nav-link">Revolut X</a>
+          </div>
+        </div>
+        <div class="footer-list-container display-in-desk">
+          <div class="footer-nav-list">
+            <h2 class="footer-nav-heading">Investments</h2>
+            <a href="#" class="footer-nav-link">Stocks</a>
+            <a href="#" class="footer-nav-link">Stocks & Shares ISA</a>
+            <a href="#" class="footer-nav-link">Commodities</a>
+          </div>
+          <div class="footer-nav-list">
+            <h2 class="footer-nav-heading">Company</h2>
+            <a href="#" class="footer-nav-link">Sustainability</a>
+            <a href="#" class="footer-nav-link">Code of Conduct</a>
+          </div>
+        </div>
+        <div class="footer-list-container display-in-align">
+          <div class="footer-nav-list">
+            <h2 class="footer-nav-heading">Help</h2>
+            <a href="#" class="footer-nav-link">Contact Us</a>
+            <a href="#" class="footer-nav-link">Help Centre</a>
+            <a href="#" class="footer-nav-link">System Status</a>
+            <a href="#" class="footer-nav-link">Developers API</a>
+            <a href="#" class="footer-nav-link">Site Map</a>
+          </div>
+          <div class="footer-nav-list display-none-desk">
+            <h2 class="footer-nav-heading">Crypto</h2>
+            <a href="#" class="footer-nav-link">Crypto</a>
+            <a href="#" class="footer-nav-link">Revolut Ramp</a>
+            <a href="#" class="footer-nav-link">Revolut X</a>
+          </div>
+        </div>
+        <div class="footer-list-container display-in-align">
+          <div class="footer-nav-list">
+            <h2 class="footer-nav-heading">Security & Protection</h2>
+            <a href="#" class="footer-nav-link">How We Protect Your Money</a>
+            <a href="#" class="footer-nav-link">Report Lost Device</a>
+            <a href="#" class="footer-nav-link">Learn About Fraud & Scams</a>
+            <a href="#" class="footer-nav-link">Security Bugs</a>
+            <a href="#" class="footer-nav-link"
+              >Consumer Security Insight Report</a
+            >
+          </div>
+          <div class="footer-nav-list display-none-desk">
+            <h2 class="footer-nav-heading">Investments</h2>
+            <a href="#" class="footer-nav-link">Stocks</a>
+            <a href="#" class="footer-nav-link">Stocks & Shares ISA</a>
+            <a href="#" class="footer-nav-link">Commodities</a>
+          </div>
+        </div>
+        <div class="footer-list-container">
+          <button class="footer-nav-menu display-none-md">
+            subscriptions
+            <span class="arrow-down"></span>
+          </button>
+          <button class="footer-nav-menu display-none-md">
+            Investments
+            <span class="arrow-down"></span>
+          </button>
+          <button class="footer-nav-menu display-none-md">
+            Company
+            <span class="arrow-down"></span>
+          </button>
+          <div class="footer-nav-list display-none-mobile">
+            <h2 class="footer-nav-heading">subscriptions</h2>
+            <a href="#" class="footer-nav-link">Standard</a>
+            <a href="#" class="footer-nav-link">Plus</a>
+            <a href="#" class="footer-nav-link">Premium</a>
+            <a href="#" class="footer-nav-link">Metal</a>
+            <a href="#" class="footer-nav-link">Ultra</a>
+            <a href="#" class="footer-nav-link">Compare subscriptions</a>
+          </div>
+          <div class="footer-nav-list display-none-mobile display-none-align">
+            <h2 class="footer-nav-heading">Investments</h2>
+            <a href="#" class="footer-nav-link">Stocks</a>
+            <a href="#" class="footer-nav-link">Stocks & Shares ISA</a>
+            <a href="#" class="footer-nav-link">Commodities</a>
+          </div>
+          <div
+            class="footer-nav-list display-none-mobile display-none-align display-none-desk"
+          >
+            <h2 class="footer-nav-heading">Company</h2>
+            <a href="#" class="footer-nav-link">Sustainability</a>
+            <a href="#" class="footer-nav-link">Code of Conduct</a>
+          </div>
+        </div>
+        <div class="footer-list-container">
+          <button class="footer-nav-menu display-none-md">
+            Global Finances
+            <span class="arrow-down"></span>
+          </button>
+          <button class="footer-nav-menu display-none-md">
+            Help
+            <span class="arrow-down"></span>
+          </button>
+          <div class="footer-nav-list display-none-mobile">
+            <h2 class="footer-nav-heading">Global Finances</h2>
+            <a href="#" class="footer-nav-link">Travel with Revolut</a>
+            <a href="#" class="footer-nav-link">International Transfers</a>
+            <a href="#" class="footer-nav-link">eSIM Data subscriptions</a>
+            <a href="#" class="footer-nav-link">Lounges</a>
+            <a href="#" class="footer-nav-link">Insurance</a>
+            <a href="#" class="footer-nav-link">Donations</a>
+          </div>
+          <div class="footer-nav-list display-none-mobile display-none-align">
+            <h2 class="footer-nav-heading">Help</h2>
+            <a href="#" class="footer-nav-link">Contact Us</a>
+            <a href="#" class="footer-nav-link">Help Centre</a>
+            <a href="#" class="footer-nav-link">System Status</a>
+            <a href="#" class="footer-nav-link">Developers API</a>
+            <a href="#" class="footer-nav-link">Site Map</a>
+          </div>
+        </div>
+        <div class="footer-list-container">
+          <button class="footer-nav-menu display-none-md">
+            Accounts
+            <span class="arrow-down"></span>
+          </button>
+
+          <button class="footer-nav-menu display-none-md">
+            Security & Protection
+            <span class="arrow-down"></span>
+          </button>
+          <div class="footer-nav-list display-none-mobile">
+            <h2 class="footer-nav-heading">Accounts</h2>
+            <a href="#" class="footer-nav-link">Personal Account</a>
+            <a href="#" class="footer-nav-link">Joint Account</a>
+            <a href="#" class="footer-nav-link">Professional Account</a>
+            <a href="#" class="footer-nav-link">Savings Account</a>
+            <a href="#" class="footer-nav-link">For ages 16-17</a>
+            <a href="#" class="footer-nav-link">Parents and guardians</a>
+          </div>
+          <div class="footer-nav-list display-none-mobile display-none-align">
+            <h2 class="footer-nav-heading">Security & Protection</h2>
+            <a href="#" class="footer-nav-link">How We Protect Your Money</a>
+            <a href="#" class="footer-nav-link">Report Lost Device</a>
+            <a href="#" class="footer-nav-link">Learn About Fraud & Scams</a>
+            <a href="#" class="footer-nav-link">Security Bugs</a>
+            <a href="#" class="footer-nav-link"
+              >Consumer Security Insight Report</a
+            >
+          </div>
+
+          <div class="footer-nav-list display-in-align display-none-desk">
+            <h2 class="footer-nav-heading">Company</h2>
+            <a href="#" class="footer-nav-link">Sustainability</a>
+            <a href="#" class="footer-nav-link">Code of Conduct</a>
+          </div>
+        </div>
+        <div class="footer-list-container">
+          <button class="footer-nav-menu display-none-md">
+            Smart Spending
+            <span class="arrow-down"></span>
+          </button>
+
+          <button class="footer-nav-menu display-none-md">
+            Crypto
+            <span class="arrow-down"></span>
+          </button>
+          <div class="footer-nav-list display-none-mobile">
+            <h2 class="footer-nav-heading">Smart Spending</h2>
+            <a href="#" class="footer-nav-link">Cards</a>
+            <a href="#" class="footer-nav-link">Send & Recieve</a>
+            <a href="#" class="footer-nav-link">Revolut Pay</a>
+            <a href="#" class="footer-nav-link">Money Management</a>
+            <a href="#" class="footer-nav-link">RevPoints</a>
+            <a href="#" class="footer-nav-link">Linked Accounts</a>
+            <a href="#" class="footer-nav-link">Shops</a>
+          </div>
+          <div class="footer-nav-list display-none-mobile display-none-align">
+            <h2 class="footer-nav-heading">Crypto</h2>
+            <a href="#" class="footer-nav-link">Crypto</a>
+            <a href="#" class="footer-nav-link">Revolut Ramp</a>
+            <a href="#" class="footer-nav-link">Revolut X</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Follow-Us-On-Social-Media -->
+
+      <ul class="social-media-container">
+        <li class="logo-container">
+          <span class="revolut-icon">
+            <svg
+              class="footer-revolut-svg"
+              fill="white"
+              viewBox="0 0 145 32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Revolut</title>
+              <path
+                clip-rule="evenodd"
+                d="m98.8039 0h5.6871v31.7312h-5.6871zm46.0571 13.3685v-4.92408h-5.881v-6.41996h-5.687v23.40534c0 2.1506.541 3.7895 1.608 4.8714 1.066 1.0828 2.728 1.6317 4.939 1.6317h5.021v-4.924h-3.674c-.799 0-1.372-.1757-1.704-.5226-.305-.3175-.503-1.1195-.503-2.043v-11.0748zm-84.6893 12.1865 5.8804-17.11125h5.9749l-8.4889 23.28775h-6.7327l-8.489-23.28775h5.9749zm63.8513-5.4451c0 1.4743-.224 2.7569-.664 3.8121-.437 1.0495-1.063 1.8541-1.861 2.3908s-1.779.8089-2.916.8089c-1.626 0-2.853-.5344-3.646-1.5878-.802-1.0646-1.209-2.6781-1.209-4.7954v-12.29412h-5.687v12.92272c0 2.0122.251 3.7189.748 5.0721.497 1.3573 1.18 2.4614 2.029 3.281.849.8187 1.84 1.41 2.946 1.7581 1.1.3463 2.284.5217 3.518.5217 1.778 0 3.25-.3225 4.373-.9586 1.024-.5819 1.883-1.2622 2.555-2.0251l.509 2.7148h4.992v-23.28672h-5.687zm-33.913-10.43745c-1.7923-.99372-3.9206-1.49716-6.3249-1.49716-2.3749 0-4.4953.50344-6.3024 1.49684-1.8092.99597-3.2308 2.40247-4.2254 4.18037-.9931 1.7763-1.4966 3.8817-1.4966 6.2574 0 2.3466.5035 4.4373 1.4966 6.2136.994 1.7773 2.4159 3.1835 4.2254 4.1793 1.8071.9935 3.9276 1.4969 6.3024 1.4969 2.4042 0 4.5325-.5034 6.3249-1.4972 1.7942-.9953 3.2082-2.4014 4.2026-4.179.9934-1.7773 1.4971-3.868 1.4971-6.2136 0-2.3748-.5037-4.4802-1.4971-6.2575-.995-1.7781-2.4087-3.1847-4.2026-4.17995zm-3.0047 16.63905c-.9162.5966-2.0332.8993-3.3199.8993-1.2572 0-2.367-.3026-3.2986-.8995-.9332-.5976-1.665-1.441-2.1757-2.5072-.5128-1.0672-.7732-2.3099-.7732-3.6942 0-1.4128.2601-2.6627.7732-3.7154.5104-1.0518 1.2428-1.8955 2.1769-2.5081.9313-.612 2.0408-.9222 3.2973-.9222 1.2861 0 2.4025.3102 3.319.9215.9191.613 1.6443 1.457 2.1559 2.5091.5125 1.0552.7725 2.3052.7725 3.7152 0 1.3811-.26 2.6242-.7725 3.6941-.5115 1.0664-1.2364 1.9099-2.1549 2.5074zm-81.19475-18.48035h-5.91055v23.90035h5.91055zm18.53525 1.36671c0-5.07148-4.1298-9.19751668-9.2063-9.19751668h-15.2395v5.10407668h14.5149c2.2974 0 4.2004 1.80488 4.2425 4.02316.021 1.11072-.3959 2.15902-1.1738 2.95172-.7782.7929-1.818 1.2299-2.9278 1.2299h-5.65434c-.20074 0-.36413.1631-.36413.3639v4.5363c0 .0772.02383.1509.06866.213l9.59341 13.3092h7.0225l-9.6157-13.3456c4.8425-.2431 8.7396-4.3118 8.7396-9.18814zm18.1745.33907c-1.7026-.90368-3.7242-1.36164-6.0087-1.36164-2.2874 0-4.3325.50376-6.0787 1.4978-1.7491.99501-3.1251 2.40181-4.0897 4.18061-.9636 1.7748-1.452 3.8949-1.452 6.3017 0 2.3457.4959 4.4357 1.4746 6.2123.9808 1.7807 2.3955 3.1797 4.2041 4.158 1.8052.9784 3.9706 1.4743 6.4354 1.4743 1.9554 0 3.7114-.3663 5.2192-1.0894 1.5081-.7249 2.7393-1.712 3.6596-2.9341.8742-1.1615 1.464-2.4752 1.7525-3.9042l.0311-.1525h-5.6559l-.0267.0916c-.3114 1.0659-.9156 1.9081-1.7964 2.5038-.9454.6405-2.1066.9654-3.4519.9654-1.1402 0-2.17-.2443-3.0605-.7261-.8862-.479-1.5791-1.164-2.059-2.0367-.4818-.8757-.756-1.9294-.8146-3.1254v-.187h17.0842l.0191-.1044c.0596-.3278.0979-.6656.1145-1.0053.0141-.331.0223-.6616.0223-.9953-.0305-2.2563-.5348-4.2409-1.4987-5.8993-.9677-1.6603-2.3215-2.9605-4.0238-3.86417zm-2.0724 4.38547c.9717.8178 1.5762 1.9799 1.7979 3.4564h-11.2467c.1285-.958.4466-1.7877.9463-2.4683.5242-.7139 1.1957-1.2748 1.9962-1.6672.8014-.3936 1.6813-.5934 2.6148-.5934 1.5781-.0001 2.8874.4281 3.8915 1.2725z"
+                fill-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </li>
+        <li class="social-icon-container">
+          <span
+            class="social-media-icon"
+            style="mask-image: url(https://assets.revolut.com/assets/icons/LogoFacebook.svg);"
+          ></span>
+        </li>
+        <li class="social-icon-container">
+          <span
+            class="social-media-icon"
+            style="mask-image: url(https://assets.revolut.com/assets/icons/LogoInstagram.svg);"
+          ></span>
+        </li>
+        <li class="social-icon-container">
+          <span
+            class="social-media-icon"
+            style="mask-image: url(	https://assets.revolut.com/assets/icons/LogoTwitter.svg);"
+          ></span>
+        </li>
+        <li class="social-icon-container">
+          <span
+            class="social-media-icon"
+            style="mask-image: url(https://assets.revolut.com/assets/icons/LogoLinkedIn.svg);"
+          ></span>
+        </li>
+        <li class="social-icon-container">
+          <span
+            class="social-media-icon"
+            style="mask-image: url(https://assets.revolut.com/assets/icons/LogoTikTok.svg);"
+          ></span>
+        </li>
+      </ul>
+
+      <!-- Footer Select Country  -->
+
+      <div class="web-info-section">
+        <button class="uk-btn">
+          <img
+            src="https://assets.revolut.com/assets/flags/GB.webp"
+            alt="uk-flag-icon"
+            width="14"
+            height="14"
+          />
+          United Kingdom
+        </button>
+        <ul class="web-terms-container">
+          <li class="web-terms">Website Terms</li>
+          <li class="web-terms">Legal Agreements</li>
+          <li class="web-terms">Complaints</li>
+          <li class="web-terms">Privacy</li>
+          <li class="web-terms">UK Modern Slavery Policy</li>
+          <li class="web-terms">Customer Vulnerability</li>
+          <li class="web-terms">Data Privacy Statement for Candidates</li>
+        </ul>
+      </div>
+      <!-- revolut-info  -->
+      <section class="revolut-info">
+        <p class="policy-text">© Revolut Ltd 2025</p>
+        <p class="policy-text">
+          To find out more about which Revolut entity you receive services from,
+          please check our corresponding
+          <a href="#" class="policy-link">FAQ page</a>. If you have any other
+          questions, please reach out to us via the in-app chat in the Revolut
+          app.
+        </p>
+        <p class="policy-text">
+          Revolut Ltd is registered in England and Wales (No. 08804411), is
+          authorised by the Financial Conduct Authority to offer e-money and
+          payment services under the Electronic Money Regulations 2011 (FRN:
+          900562), and is registered with the Financial Conduct Authority to
+          offer cryptocurrency services under the Money Laundering, Terrorist
+          Financing and Transfer of Funds (Information on the Payer) Regulations
+          2017. Commodities services are provided by Revolut Ltd and are not
+          regulated by the Financial Conduct Authority.
+        </p>
+        <p class="policy-text">
+          Revolut Travel Ltd (No. 10618740) is authorised by the Financial
+          Conduct Authority to undertake insurance distribution activities (FRN:
+          780586). Our insurance products are arranged by Revolut Travel Ltd and
+          Revolut Ltd, an appointed representative of Revolut Travel Ltd.
+        </p>
+        <p class="policy-text">
+          Investment services are provided by Revolut Trading Ltd (No.
+          11567840), which is authorised and regulated by the Financial Conduct
+          Authority (FRN: 933846).
+        </p>
+        <p class="policy-text">
+          The registered address of Revolut Ltd, Revolut Travel Ltd, and Revolut
+          Trading Ltd is at 7 Westferry Circus, Canary Wharf, London, England,
+          E14 4HD. You can read more about our
+          <a href="#" class="policy-link">terms and policies here</a>.
+        </p>
+      </section>
+
+      <!-- Money Converting Quick Links  -->
+
+      <section class="revolut-info">
+        <b class="font-bold"
+          ><a href="#" class="revolut-link">International Money Transfers</a
+          >: </b>
+        <a href="#" class="revolut-link">Send Money to India</a> | 
+        <a href="#" class="revolut-link">Send Money to Nigeria</a> | 
+        <a href="#" class="revolut-link">Send Money to Poland</a> | 
+        <a href="#" class="revolut-link">Send Money to Ghana</a> | 
+        <a href="#" class="revolut-link">Send Money to Dubai</a> | 
+        <a href="#" class="revolut-link">Send Money to the UK from India</a> | 
+        <a href="#" class="revolut-link">Send Money to Saudi Arabia</a> | 
+        <a href="#" class="revolut-link">Send Money to North Macedonia</a> | 
+        <a href="#" class="revolut-link">Send Money to Kazakhstan</a>
+        <br />
+        <br />
+        <b class="font-bold"
+          ><a href="#" class="revolut-link">Currency Converter</a>: </b
+        >
+        <a href="#" class="revolut-link">Convert GBP to INR</a> | 
+        <a href="#" class="revolut-link">Convert USD to GBP</a> | 
+        <a href="#" class="revolut-link">Convert GBP to EUR</a> | 
+        <a href="#" class="revolut-link">Convert GBP to USD</a> | 
+        <a href="#" class="revolut-link">Convert EUR to GBP</a> | 
+        <a href="#" class="revolut-link">Convert GBP to PKR</a> | 
+        <a href="#" class="revolut-link">Convert GBP to TRY</a> | 
+        <a href="#" class="revolut-link">Convert GBP to HKD</a> | 
+        <a href="#" class="revolut-link">Convert KRW to GBP</a> | 
+        <a href="#" class="revolut-link">Convert AED to GBP</a> | 
+        <a href="#" class="revolut-link">Convert INR to GBP</a> | 
+        <a href="#" class="revolut-link">Convert GBP to CAD</a> | 
+        <a href="#" class="revolut-link">Compare Exchange Rates</a>
+        <br />
+        <br />
+        <a href="#" class="revolut-link">Revolut USA</a> | 
+        <a href="#" class="revolut-link">Revolut Spain</a> | 
+        <a href="#" class="revolut-link">Revolut Australia</a> | 
+        <a href="#" class="revolut-link">Revolut Singapore</a> | 
+        <a href="#" class="revolut-link">Revolut Estonia</a>
+      </section>
+    </footer>
+  </body>
 </html>
