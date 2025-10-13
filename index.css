@@ -378,7 +378,7 @@ body {
   margin: 0;
 }
 
-.carousel-img-container {
+.personal-account-card-container {
   display: flex;
   align-self: flex-start;
   width: 232px;
@@ -388,12 +388,12 @@ body {
   border-radius: 20px;
 }
 
-.carousel-img-container
+
  .background-image-primary {
   position: absolute;
   bottom: 0px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 12%);
   transform-origin: 50% 100%;
   pointer-events: none;
   display: block;
@@ -401,7 +401,7 @@ body {
   height: calc(572.911px);
 }
 
-.carousel-img-container
+.personal-account-card-container
  .personal-account-image {
   position: absolute;
   height: 100%;
@@ -1581,6 +1581,9 @@ body {
   .explore-stocks-section {
     height: 390.8px;
   }
+  .engagement{
+    height: 874px;
+  }
 
   .view-port-height {
     min-height: 90vh;
@@ -1981,7 +1984,7 @@ body {
     gap: 32px;
   }
 
-  .carousel-img-container-desktop {
+  .personal-account-card-container-desktop {
     width: 320.88px;
     height: 452.8px;
   }
