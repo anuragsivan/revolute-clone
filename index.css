@@ -333,7 +333,7 @@ body {
   gap: 16px;
 }
 
-.carousel-card-section {
+.personal-account-card-section {
   position: relative;
   display: flex;
   padding: 48px 20px;
@@ -393,7 +393,7 @@ body {
   position: absolute;
   bottom: 0px;
   left: 50%;
-  transform: translate(-50%, 12%);
+  transform: translateX(-50%);
   transform-origin: 50% 100%;
   pointer-events: none;
   display: block;
@@ -434,7 +434,13 @@ body {
   margin-top: 4px;
 }
 
+.margin-8{
+  margin-top: 8px;
+}
 
+.margin-16{
+  margin-top: 16px;
+}
 
 .carousel-pointers {
   position: absolute;
@@ -449,18 +455,19 @@ body {
   align-items: center;
 }
 
-.carousel-dot-active {
+.slider-dot-active {
   height: 8px;
   width: 8px;
   border-radius: 100%;
   background-color: #8d969e;
 }
 
-.carousel-dot {
+.slider-dot {
   height: 6px;
   width: 6px;
   border-radius: 100%;
   background-color: #8d969e;
+  opacity: 0.7;
 }
 
 .popularity-container {
@@ -496,13 +503,14 @@ body {
 }
 
 .available-platform {
+  gap: 8px;
   width: 146px;
   display: flex;
   flex-direction: column;
 }
 
 .platform-text {
-  margin-top: 8px;
+  margin-top: 0px;
   font-family: revolut-medium;
   font-weight: 500;
   font-size: 1rem;
@@ -611,7 +619,7 @@ body {
 }
 
 .stock-height{
-  height: 222px;
+  height: 318px;
 }
 
 .content-terms {
@@ -671,7 +679,6 @@ body {
   display: flex;
   gap: 12px;
   align-items: flex-end;
-  /* margin-inline: calc(-1 * 20px); */
   max-width: 100vw;
   overflow-x: scroll;
   width: 100%;
@@ -784,7 +791,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  gap: 24px;
+  gap: 16px;
   text-align: start;
 }
 
@@ -925,11 +932,13 @@ body {
   margin: 0 0 0 auto;
 }
 
-.subscription-card:hover .arrow-right{
+.subscription-card:hover
+ .arrow-right{
   background-color: #000;
 }
 
-.subscription-card:hover .arrow-right-image{
+.subscription-card:hover
+ .arrow-right-image{
   background-color: #fff;
 }
 
@@ -1105,6 +1114,19 @@ body {
   display: none !important;
 }
 
+@media screen and (min-width: 425px) {
+  .stock-height {
+    height: 258px;
+  }
+  .download-text{
+    font-size: 32.285px;
+  }
+  .savings-card-buttons{
+    width: 414.14px;
+    margin: 0px 5px;
+  }
+}
+
 @media screen and (min-width: 450px) {
   .hero-card-mobile {
     width: calc(49.6063vh);
@@ -1130,12 +1152,15 @@ body {
     grid-template: "close message dropdown button" / auto 1fr max-content 40px;
   }
 
-  .hero-section .hero-content-container {
+  .hero-section 
+    .hero-content-container {
     padding: 48px 20px 24px;
     z-index: 2;
   }
 
-  .hero-section .hero-content-container .hero-title {
+  .hero-section
+   .hero-content-container
+    .hero-title {
     font-size: clamp(5rem, 4.1rem + 1.64vw, 6.5rem);
     letter-spacing: -2.08px;
   }
@@ -1151,8 +1176,12 @@ body {
   .display-none-md {
     display: none;
   }
+  
+  .stock-height{
+    height: 222px;
+  }
 
-  .carousel-card-section .card-content {
+  .personal-account-card-section .card-content {
     margin-bottom: 24px;
     align-items: center;
   }
@@ -1180,25 +1209,15 @@ body {
     gap: 24px;
   }
 
-  .personal-account-container{
-    position: absolute;
-    bottom: 0px;
-    top: 0px;
-    min-height: max(100vh, 530px);
-    padding: 4rem 0px;
-    width: 100%;
-    overflow: hidden;
-  }
-  .house-bill-container{
-    height: 314.64px;
-  }
 
-  .personal-account-bottom-align{
-    position: relative;
-    min-height: 530px;
-    height: 100vh;
-    padding-top: 72px;
-  }
+.house-bill-container{
+  height: 294.64px;
+}
+
+.margin-right{
+  margin-right: 1px;
+}
+
 
   .popularity-title {
     text-align: center;
@@ -1214,6 +1233,15 @@ body {
 
   .awards-card {
     width: 316px;
+    height: 156.39px;
+  }
+
+  .customer-satisfaction{
+    height: 156.39px;
+  }
+
+  .margin-8{
+    margin-top: 8px;
   }
 
   .awards-card-image {
@@ -1447,6 +1475,11 @@ body {
     border-radius: 24px;
   }
 
+  .policy-text{
+    line-height: 18px;
+  }
+
+
   .hero-section {
     position: relative;
     top: calc(-1 * 72px);
@@ -1463,6 +1496,10 @@ body {
 
   .hero-section .hero-content-container {
     padding: 48px 0 24px;
+  }
+
+  .app-download-section{
+    gap: 24px;
   }
 
   .hero-section .hero-content-container .hero-title {
@@ -1487,6 +1524,9 @@ body {
     height: calc(70vh);
     padding-block: 64px;
     top: 50%;
+  }
+  .background-image-primary{
+    transform: translate(-50%, 12%);
   }
 
   .hero-card-align {
@@ -1529,6 +1569,23 @@ body {
     display: block;
   }
 
+    .personal-account-container{
+    position: absolute;
+    bottom: 0px;
+    top: 0px;
+    min-height: max(100vh, 530px);
+    padding: 4rem 0px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+    .personal-account-bottom-align{
+    position: relative;
+    min-height: 530px;
+    height: 100vh;
+    padding-top: 72px;
+  }
+
   .popularity-container {
     margin-block: 80px;
     padding-inline: 0;
@@ -1551,12 +1608,21 @@ body {
   }
 
   .content-section {
+    margin-bottom: 0px;
     padding-inline: 0;
-    margin-bottom: 32px;
     align-items: center;
     gap: 24px;
   }
 
+
+  .margin-bottom-32{
+    margin-bottom: 32px;
+  }
+
+
+  .house-bill-container{
+    height: 314.64px;
+  }
 
   .personal-account-description{
     width: 80%;
@@ -1594,6 +1660,10 @@ body {
     text-align: start;
     align-items: center;
     min-height: 90vh;
+  }
+
+  .content-section-align{
+    align-self: center;
   }
 
   .content-section-align {
@@ -1710,6 +1780,52 @@ body {
   .content-height-419 {
     height: 419.399px;
   }
+
+    .card-heading{
+    font-size: 52.608px;
+    text-align: center;
+  }
+
+  .margin-auto{
+    margin: 0px auto;
+  }
+
+  .card-content{
+    width: 876.34px;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .top-8{
+    margin-top: 8px;
+  }
+
+  .house-bill-container{
+    height: 331.2px;
+    width: 234.71px;
+    border-radius: 12px;
+  }
+
+  .personal-account-card-container{
+    height: 368px;
+    width: 260.79px;
+    border-radius: 12px;
+  }
+  
+  .personal-account-card-section{
+    align-items: center;
+    padding: 0px;
+  }
+  .personal-account-container{
+    padding: 100px 0px 0px 0px;
+  }
+  
+
+  .personal-account-align{
+    gap: 16px;
+  }
+
 }
 
 /* desktoptop size  */
@@ -1774,6 +1890,8 @@ body {
     border-radius: 28px;
   }
 
+
+
   .hero-section .hero-content-container .hero-title {
     font-size: 136px;
     letter-spacing: -2.72px;
@@ -1799,6 +1917,7 @@ body {
     font-size: 20px;
     line-height: 28px;
   }
+
 
   .footer-section {
     padding: 40px calc((100vw - 1432px) / 2);
@@ -1973,7 +2092,7 @@ body {
     font-size: 20px;
   }
 
-  .carousel-card-section {
+  .personal-account-card-section {
     max-width: 1432px;
   }
 
