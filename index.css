@@ -388,6 +388,16 @@ body {
   border-radius: 20px;
 }
 
+.personal-account-card-container2 {
+  display: flex;
+  align-self: flex-start;
+  width: 232px;
+  position: relative;
+  height: 327.378px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
 
  .background-image-primary {
   position: absolute;
@@ -442,7 +452,7 @@ body {
   margin-top: 16px;
 }
 
-.carousel-pointers {
+.personal-acc-selects {
   position: absolute;
   left: 32%;
   bottom: 20px;
@@ -1807,7 +1817,7 @@ body {
     border-radius: 12px;
   }
 
-  .personal-account-card-container{
+  .personal-account-card-container2{
     height: 368px;
     width: 260.79px;
     border-radius: 12px;
@@ -2105,7 +2115,7 @@ body {
     height: 452.8px;
   }
 
-  .carousel-img-desktop {
+  .personal-image-desktop {
     width: calc(126vh) !important;
     height: calc(70vh) !important;
   }
